@@ -1,3 +1,414 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+/*code starts here*/
+
+.container {
+  width: 850px;
+  /* TB LR */
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .container {
+      background: coral;
+      width: 100%;
+    }
+
+    .container header nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+      background:purple;
+      width: 100%;
+      
+    }
+    .container header nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* header */
+header {
+	display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    header {
+      background:red;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    header nav {
+        order: 1;
+        width: 100%;
+    }
+
+    .logo {
+        order: 0;
+        margin: 0 auto;
+    }
+
+}
+@media (max-width: 500px) {
+    header {
+        display: flex;
+        justify-content: center;
+        background:violet;
+        width: 100%;
+    }
+    header nav a {
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        width: 100%;
+    }
+    /*Targeting the top border in nav*/
+    header nav a:nth-child(1) {
+        border-top: 1px solid gray;
+    }
+}
+
+header nav {
+	padding-top: 20px;
+ 
+}
+
+header nav a {
+  margin-right: 65px;
+  font-size: 14px;
+  color: gray;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav a:first-child {
+  margin-left: 0;
+}
+
+header nav a:last-child {
+  margin-right: 0;
+}
+
+header .logo {
+	align-self: flex-end;
+}
+
+/* cta */
+
+.cta {
+	display: flex;
+}
+
+@media (max-width: 800px) {
+    .cta img {
+        display: none;
+        
+    }
+
+    .cta-text{
+        margin: 0 auto;
+    }
+}
+
+.cta .cta-text {
+  vertical-align: top;
+  font-size: 77px;
+  margin-top: 120px;
+  text-align: center;
+  padding: 0px 75px;
+}
+
+.cta .cta-text button {
+  background: white;
+  vertical-align: top;
+  margin-top: 6px;
+  padding: 8px 44px;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.cta .cta-text button:hover {
+  background: black;
+  color: white;
+}
+
+.cta img {
+  margin-top: 69px;
+}
+
+.main-content {
+	display: flex;
+	flex-flow: row wrap;
+  border-top: 1px solid black;
+  margin-top: 76px;
+  padding-top: 39px;
+  width: 100%;
+}
 
 
+
+.main-content .top-content {
+	display: flex;
+  padding: 0 10px;
+}
+
+.main-content .top-content .text-content {
+	display: flex;
+	flex-flow: column wrap;
+    width: 46%;
+    margin-right: 34px;
+}
+
+.main-content .top-content .text-content:last-child {
+  margin-right: 0;
+}
+
+.main-content .middle-img {
+  margin-top: 45px;
+  width: 100%;
+}
+
+.main-content .bottom-content {
+	display: flex;
+	align-items: center;
+    margin-top: 37px;
+    padding: 0 10px;
+}
+
+.main-content .bottom-content .text-content {
+	display: flex;
+	flex-flow: column wrap;
+    width: 30%;
+    margin-right: 12px;
+}
+
+.main-content .bottom-content .text-content:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 500px) {
+    .top-content, .bottom-content {
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+
+    .main-content .top-content .text-content {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .main-content .bottom-content .text-content {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+
+.contact {
+  margin-top: 57px;
+  border-top: 1px solid black;
+  padding: 39px 10px 0;
+}
+
+.contact p {
+  margin: 20px 0;
+}
+
+footer {
+  margin: 32px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/*Services page below this line*/
+
+
+nav {
+display: flex;
+justify-content: space-around;
+}
+
+.top-image {
+	display: flex;
+	justify-content: center;
+}
+
+.service-text {
+	flex-direction: column;
+	width: 100%;
+	border-bottom:solid black 1px;
+	padding: 20px;
+
+}
+
+.boxes {
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content:space-between;
+}
+
+.box {
+	width: 45%;
+	padding: 10px;
+	margin: 10px;
+	border:solid black 1px;
+}
+
+button{
+	margin-top: 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.bottom-services {
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	height: 300px;
+	width: 45%;
+	margin-left: 10px;
+}
+
+.services-list {
+	list-style-type: square;
+	margin-left: 10px;
+}
+
+/*  
+Insert a viewport meta tag into the head of the project with these html attributes: content="width=device-width, initial-scale=1"
+ 
+Introduce max-width media queries into your project at 800px and 500px
+ 
+Do your best to make your styles match the design files at each breakpoint
+
+ */
+
+ /*@media (max-width: 1000px){
+    .box1 {
+      background: blue;
+      justify-content: flex-start;
+    }
+    .box2 {
+      background: green;
+    }
+    
+    .box3 {
+      background: red;
+    }
+  } */
+  
+   /* At 800px And below target div classes:
+    @media (max-width: 800px) {
+        .container {
+            background: teal;
+            width: 800px;
+      }
+       /* .box2 {
+            background: gold;
+    }
+    
+        .box3 {
+            background: red;
+    }
+    }
+  
+    @media (max-width: 500px){
+        .box {
+          width: 75%;
+          margin: 0 auto;
+        }
+        .box1 {
+          background: Purple;
+        }
+        
+      }
+
+
+
+    /* Mobile 0px - 500px And below do the following: 
+  @media (min-width: 500px){
+    .box {
+      width: 75%;
+      margin: 0 auto;
+    }
+    .box1 {
+      background: Purple;
+    }
+    
+  }
+  */
